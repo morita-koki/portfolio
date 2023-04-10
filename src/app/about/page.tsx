@@ -1,5 +1,4 @@
 "use client"
-// import styles from './page.module.css'
 
 import { Box, Container, Grid, ImageList, ImageListItem, Typography } from "@mui/material";
 import Image  from "next/image"
@@ -63,7 +62,7 @@ export default function About() {
                 - jack: <Box component="a" href="https://twitter.com/jackapp_tmy" target="_blank" sx={{textDecoration: "none", color: "#039be5"}}>https://twitter.com/jackapp_tmy</Box>
               </Typography>
             </Grid>
-            
+
         </Grid>
     </Container>
   )
