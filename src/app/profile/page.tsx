@@ -19,7 +19,6 @@ import { Box, Container, Grid } from '@mui/material';
 
 export default function ProfilePage() {
     return (
-
         <Container maxWidth="md">
             <Typography variant="h3" textAlign="center" marginY={3}>
                 My Profile

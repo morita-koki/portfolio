@@ -39,7 +39,7 @@ export default function RootLayout({
           <Header />
           <Box
           sx={{
-            background: '#FFFCF8',
+            background: '#FFF0d8',
             paddingTop: "10vh",
             zIndex: 1,
             minHeight: "100vh"

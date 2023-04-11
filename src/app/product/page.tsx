@@ -14,7 +14,7 @@ export default function ProductsPage() {
             justifyContent="space-evenly"
             alignItems="center" >
             <Grid item xs={12}>
-                <Typography variant="h3" textAlign="center">
+                <Typography variant="h3" textAlign="center" marginY={3}>
                     Products
                 </Typography>
                 <Typography textAlign="center">
