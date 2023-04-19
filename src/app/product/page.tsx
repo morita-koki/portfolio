@@ -1,7 +1,7 @@
 "use client"
 // import styles from './page.module.css'
 
-import { Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 
 // original conponent
 
@@ -9,8 +9,9 @@ import * as React from 'react';
 import ProductCardWithModal from "@/components/modules/ProductCardWithModal";
 
 
+
 const prop = {
-    img: "",
+    img: "/penguin.jpeg",
     title: "this is title",
     description: "this is description"
 }
@@ -27,9 +28,18 @@ export default function ProductsPage() {
         <Grid
             container
             direction="row"
-            justifyContent="space-evenly"
-            alignItems="center" >
-            <ProductCardWithModal props={prop}/>
+            justifyContent="space-between"
+            alignItems="center"
+            spacing={6} >
+            <Grid item xs={8} md={4}>
+                <ProductCardWithModal title="bbb" image="/penguin.jpeg" description="hello" />
+            </Grid>
+            <Grid item xs={8} md={4}>
+                <ProductCardWithModal title="bbb" image="/penguin.jpeg" description="hello" />
+            </Grid>
+            <Grid item xs={8} md={4}>
+                <ProductCardWithModal title="bbb" image="/penguin.jpeg" description="hello" />
+            </Grid>
         </Grid>
     </Container>
   )
