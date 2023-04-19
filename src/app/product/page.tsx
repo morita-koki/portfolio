@@ -7,14 +7,36 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 
 import * as React from 'react';
 import ProductCardWithModal from "@/components/modules/ProductCardWithModal";
+import type {ProductCardWithModalProps} from "@/components/modules/ProductCardWithModal"
 
 
 
-const prop = {
-    img: "/penguin.jpeg",
-    title: "this is title",
-    description: "this is description"
-}
+const productContents: Array<ProductCardWithModalProps> = [
+    { 
+        image: "/penguin.jpeg",
+        title: "this is title",
+        application_description: "this is description",
+        skills_description: "this is skill description",
+    },
+    {
+        image: "/penguin.jpeg",
+        title: "this is title",
+        application_description: "this is description",
+        skills_description: "this is skill description",
+    },
+    {
+        image: "/penguin.jpeg",
+        title: "this is title",
+        application_description: "this is description",
+        skills_description: "this is skill description",
+    },
+    {
+        image: "/penguin.jpeg",
+        title: "this is title",
+        application_description: "this is description",
+        skills_description: "this is skill description",
+    }
+]
 
 export default function ProductsPage() {
   return (
@@ -32,13 +54,13 @@ export default function ProductsPage() {
             alignItems="center"
             spacing={6} >
             <Grid item xs={8} md={4}>
-                <ProductCardWithModal title="bbb" image="/penguin.jpeg" description="hello" />
+                <ProductCardWithModal {...productContents[0]}/>
             </Grid>
             <Grid item xs={8} md={4}>
-                <ProductCardWithModal title="bbb" image="/penguin.jpeg" description="hello" />
+                <ProductCardWithModal {...productContents[1]}/>
             </Grid>
             <Grid item xs={8} md={4}>
-                <ProductCardWithModal title="bbb" image="/penguin.jpeg" description="hello" />
+                <ProductCardWithModal {...productContents[2]}/>
             </Grid>
         </Grid>
     </Container>
