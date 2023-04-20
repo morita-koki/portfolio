@@ -52,7 +52,7 @@ export const FrontendRadarOptions = {
 
 
 export const BackendRadarData = {
-  labels: ["Python", "Flack", "Rails", "Node.js", "MySQL"],
+  labels: ["Python", "Flask", "Rails", "Node.js", "MySQL"],
   datasets: [
     {
       label: "Backend",
