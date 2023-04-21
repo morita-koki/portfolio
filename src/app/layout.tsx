@@ -35,18 +35,16 @@ export default function RootLayout({
       {}
       <head />
       <body>
-        <ThemeProvider theme={theme}>
-          <Header />
-          <Box
-          sx={{
-            background: '#FFF0d8',
-            paddingTop: "10vh",
-            zIndex: 1,
-            minHeight: "100vh"
-          }}>
-            {children}
-          </Box>
-        </ThemeProvider>
+        <Header />
+        <Box
+        sx={{
+          // background: '#FFF0d8',
+          paddingTop: "10vh",
+          zIndex: 1,
+          minHeight: "100vh"
+        }}>
+          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+        </Box>
       </body>
     </html>
     
