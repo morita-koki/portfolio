@@ -11,10 +11,10 @@ import { FrontendRadarOptions, FrontendRadarData } from "@/constants/radarChartD
 import { BackendRadarOptions, BackendRadarData } from "@/constants/radarChartData";
 import { DevOpsRadarOptions, DevOpsRadarData } from "@/constants/radarChartData";
 
-
-export default function SkillsPage() {
+import type { SectionProps } from "@/constants/SectionPropType";
+export const Skills: React.FC<SectionProps> = (props: any) => {
     return (
-        <Box minHeight={{ md: "100vh" }}>
+        <Box {...props}>
             <Container maxWidth="md">
                 <Typography variant="h3" textAlign="center" marginY={3}>
                     My Skill Set

@@ -1,5 +1,5 @@
 "use client"
-import Header from '@/components/modules/Header'
+import { Header } from '@/components/modules/Header'
 import './globals.css'
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -30,23 +30,24 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const sections = ['about', 'profile', 'skills', 'products', 'contact'];
   return (
     <html>
-      {}
+      { }
       <head />
       <body>
-        <Header />
+        <Header sections={sections}/>
         <Box
-        sx={{
-          // background: '#FFF0d8',
-          paddingTop: "10vh",
-          zIndex: 1,
-          minHeight: "100vh"
-        }}>
+          sx={{
+            // background: '#FFF0d8',
+            paddingTop: "10vh",
+            zIndex: 1,
+            minHeight: "100vh"
+          }}>
           <ThemeProvider theme={theme}>{children}</ThemeProvider>
         </Box>
       </body>
     </html>
-    
+
   )
 }

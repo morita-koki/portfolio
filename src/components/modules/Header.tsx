@@ -7,17 +7,30 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-// import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-// import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-// import AdbIcon from '@mui/icons-material/Adb';
 
-import Link from 'next/link'
+// import Link from 'next/link'
 
-const pages = ['about', 'profile', 'skill', 'product', 'contact'];
+import { animateScroll as scroll, scroller } from 'react-scroll';
+const scrollToComponent = (componentId: string) => {
+  scroller.scrollTo(componentId, {
+    duration: 800,
+    delay: 0,
+    smooth: 'easeInOutQuart',
+    offset: -50,
+  });
+};
 
-function Header() {
+
+
+type HeaderPorps = {
+  sections: string[];
+}
+
+export const Header: React.FC<HeaderPorps> = (props) => {
+  const { sections } = props;
+  
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -28,7 +41,7 @@ function Header() {
   };
 
   return (
-    <AppBar elevation={0} position="fixed" sx={{background: "rgba(255, 255, 255, 0.8)", height: "10vh"}}>
+    <AppBar elevation={0} position="fixed" sx={{ background: "rgba(255, 255, 255, 0.8)", height: "10vh" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
 
@@ -61,29 +74,25 @@ function Header() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Link href={`/${page}`}>
-                    <Typography textAlign="center" color="textPrimary">{page}</Typography>
-                  </Link>
+              {sections.map((section) => (
+                <MenuItem key={section} onClick={() => { handleCloseNavMenu(); scrollToComponent(section); }}>
+                  <Typography textAlign="center" color="textPrimary">{section}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          
+
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {sections.map((section) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                key={section}
+                onClick={() => { handleCloseNavMenu(); scrollToComponent(section); }}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                <Link href={`/${page}`}>
-                    <Typography component="div" textAlign="center" color="textPrimary"
-                      sx={{
-                        fontFamily: "'Montserrat', sans-serif"
-                      }}>{page}</Typography>
-                </Link>
+                <Typography component="div" textAlign="center" color="textPrimary"
+                  sx={{
+                    fontFamily: "'Montserrat', sans-serif"
+                  }}>{section}</Typography>
               </Button>
             ))}
           </Box>
@@ -92,4 +101,3 @@ function Header() {
     </AppBar>
   );
 }
-export default Header;

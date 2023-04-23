@@ -9,17 +9,18 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import FastfoodIcon from '@mui/icons-material/Fastfood';
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
-import HotelIcon from '@mui/icons-material/Hotel';
 import CakeIcon from '@mui/icons-material/Cake';
-import RepeatIcon from '@mui/icons-material/Repeat';
 import FilterVintageIcon from '@mui/icons-material/FilterVintage';
 import PetsIcon from '@mui/icons-material/Pets';
 import Typography from '@mui/material/Typography';
 import { Box, Container, Grid } from '@mui/material';
 
-export default function ProfilePage() {
+
+import type { SectionProps } from '@/constants/SectionPropType';
+
+export const Profile: React.FC<SectionProps> = (props: any) => {
     return (
-        <Box minHeight={{ md: "100vh" }}>
+        <Box {...props}>
             <Container maxWidth="md">
                 <Typography variant="h3" textAlign="center" marginY={3}>
                     My Profile

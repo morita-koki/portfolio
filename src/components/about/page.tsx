@@ -3,10 +3,11 @@
 import { Box, Container, Grid, ImageList, ImageListItem, Typography } from "@mui/material";
 import Image from "next/image"
 // original conponent
+import type { SectionProps } from "@/constants/SectionPropType";
 
-export default function About() {
+export const About: React.FC<SectionProps> = (props: any) => {
   return (
-    <Box minHeight={{ md: "100vh" }}>
+    <Box {...props}>
       <Container maxWidth="md">
         <Typography variant="h3" textAlign="center" marginY={3}>
           About Me
@@ -43,17 +44,6 @@ export default function About() {
               バックエンド、フロントエンドともに興味の赴くままに触れる。
             </Typography>
           </Grid>
-
-          {/* <Grid container alignItems="center" item xs={12} md={6}>
-              <Image
-                src="/jack-icon.jpg"
-                alt="jack's icon"
-                loading="lazy"
-                width={100}
-                height={100}
-                style={{ margin: "auto" }}
-              />
-            </Grid> */}
 
           <Grid item xs={8} md={4}>
             <Typography component="p" variant="subtitle2">
